@@ -13,7 +13,6 @@ export class ProductCartDialogComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.castSelectedProducts.subscribe((selectedProducts) => {
       this.selectedProducts = selectedProducts;
-      console.log('selected product', this.selectedProducts);
     });
   }
 
@@ -21,7 +20,11 @@ export class ProductCartDialogComponent implements OnInit {
     this.dataService.addSelectedProduct([])
   }
 
-  removeItem(){
+  removeItem(id: Number){
+    this.selectedProducts = this.selectedProducts.filter(function(item: any) {
+      return item.id !== id
+  })
+  this.dataService.addSelectedProduct(this.selectedProducts)
    console.log(this.selectedProducts.id)  
   }
   getTotalAmount(){

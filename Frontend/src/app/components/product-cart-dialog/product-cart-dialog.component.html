@@ -21,13 +21,13 @@
                   <h1 class="title">{{data?.name}}</h1>
               </div>
               <div class="counter">
-                  <div class="btn">+</div>
-                  <div class="count">2</div>
-                  <div class="btn">-</div>
+                  <div (click) = "addCounter(data)" class="btn">+</div>
+                  <div class="count">{{data?.quantity}}</div>
+                  <div (click) = "removeCounter(data)" class="btn">-</div>
               </div>
               <div class="prices">
                   <div class="amount">${{data?.price}}</div>
-                  <div class="remove"><u>Remove</u></div>
+                  <div (click) = "removeItem(data?.id)" class="remove"><u>Remove</u></div>
               </div>
         </div>
 
