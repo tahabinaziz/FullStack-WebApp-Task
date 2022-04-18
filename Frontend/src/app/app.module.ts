@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { ProductCartDialog } from './components/product-cart-dialog/product-cart-dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProductCartDialog } from './components/product-cart-dialog/product-cart
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
