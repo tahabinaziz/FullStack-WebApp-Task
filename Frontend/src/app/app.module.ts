@@ -11,8 +11,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatDialogModule} from '@angular/material/dialog';
-import { ProductCartDialog } from './components/product-cart-dialog/product-cart-dialog';
 import {MatIconModule} from '@angular/material/icon';
+import { ProductCartDialogComponent } from './components/product-cart-dialog/product-cart-dialog.component';
 
 
 @NgModule({
@@ -20,8 +20,8 @@ import {MatIconModule} from '@angular/material/icon';
     AppComponent,
     ProductsComponent,
     NavbarComponent,
-    ProductCartDialog,
-    ModalComponent
+    ModalComponent,
+    ProductCartDialogComponent
   ],
   imports: [
     BrowserModule,
