@@ -1,0 +1,26 @@
+Fullstack engineer coding task - Backend + Frontend
+The task at hand is to create a shirt store.
+The overall goal of the assignment is to evaluate the architecture, structure, coding practices
+and style. How pretty/ugly it looks is irrelevant.
+Backend
+- The backend should expose 1 API endpoint that should return data as in this API -
+http://mock-shirt-backend.getsandbox.com/shirts . No additional requests will be
+required.
+Frontend
+List page:
+- We should have a list page where we see all shirts, no pagination required
+- Clicking on a shirt should add the current item to the basket
+- If the item is already in the basket, instead of adding it should increase the quantity.
+Shopping cart:
+- We should display the shopping cart In the top of the page
+- It should always show the number of items
+- When I click it, it pops up a modal where I can remove items, change items quantity and
+see the total price
+- The shopping cart state should be persisted to survive page reload
+Technicalities:
+- Frontend - Angular, Backend - NodeJS (preferably express), DB - up to you
+- You may use any additional libraries
+- Write 2 unit tests for the backend API
+- No need to deploy this online, you can locally run and show us the solution
+Please don’t hesitate to ask us if anything is unclear or you have any questions.
+In the end just send us the link to the code on Github.
