@@ -9,13 +9,15 @@
     "env": "0.0.2",
     "express": "^4.17.3",
     "fs": "0.0.1-security",
+    "jest": "^27.5.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.0",
+    "supertest": "^6.2.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"
