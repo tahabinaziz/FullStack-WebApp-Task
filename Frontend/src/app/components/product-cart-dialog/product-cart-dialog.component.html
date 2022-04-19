@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Product Cart</h2>
+<mat-dialog-content>
+    <!-- <div>
+        <img src="https://unsplash.it/128/128" alt="Product" class="img-fluid dimension">
+       <mat-icon aria-hidden="false" aria-label="Example home icon">remove</mat-icon>
+       <input type="text" value="0"/>
+       <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>  
+    </div> -->
+    <div class="body">
+    <div *ngIf="selectedProducts?.length" class="CartContainer">
+        <div class="Header">
+            <h3 class="Heading">Items Details</h3>
+            <h5 (click)= "removeAll()" class="Action">Remove all</h5>
+        </div>
+
+        <div *ngFor="let data of selectedProducts;" class="Cart-Items">
+              <div class="image-box">
+                  <img src="{{data?.picture}}" style="height:'120px'"  />
+              </div>
+              <div class="about">
+                  <h1 class="title">{{data?.name}}</h1>
+              </div>
+              <div class="counter">
+                  <div (click) = "addCounter(data)" class="btn">+</div>
+                  <div class="count">{{data?.numItems ? data?.numItems : 1 }}</div>
+                  <div (click) = "removeCounter(data)" class="btn">-</div>
+              </div>
+              <div class="prices">
+                  <div class="amount">${{data?.price}}</div>
+                  <div (click) = "removeItem(data?.id)" class="remove"><u>Remove</u></div>
+              </div>
+        </div>
+
+      <hr> 
+      <div class="checkout">
+      <div class="total">
+          <div>
+              <div class="Subtotal">Sub-Total</div>
+              <div class="items">{{selectedProducts?.length}} items</div>
+          </div>
+          <div class="total-amount">${{getTotalAmount()}}</div>
+      </div>
+      <button class="button">Checkout</button></div>
+ </div>
+ <div *ngIf="selectedProducts?.length == 0">
+    <h3 class="title">No Item Selected</h3>
+ </div>
+</div>
+
+
+    <!-- <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions> -->
+

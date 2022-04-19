@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <div class="container">
-      
-        
+
+   
+    
         <div class="container">
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-12" *ngFor="let data of productData;">
@@ -18,28 +18,25 @@
                             <div class="cp_img">
                                 <img src="{{data.picture}}" alt="Product" class="img-fluid dimension">
                                 <div class="hover">
-                                    <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i
+                                    <a (click) ="addToCart(data)" class="btn btn-primary btn-sm waves-effect"><i
                                             class="zmdi zmdi-plus"></i></a>
                                     <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i
                                             class="zmdi zmdi-shopping-cart"></i></a>
                                 </div>
                             </div>
                             <div class="product_details">
-                                <h5><a href="ec-product-detail.html">{{data.name}}</a></h5>
-
-                                <h6 class="new_price colorPrice">&#x20AC;{{data.price}}</h6>
-
-
+                                <h5><a href="#">{{data.name}}</a></h5>
+                                <p> <strong>colour:</strong>{{data.colour}}<strong> size: </strong>{{data.size}} <strong> quantity: </strong> {{data.quantity}}</p>
+                                <h6 class="new_price colorPrice"><span class="color-price">Price: </span>&#x20AC;{{data.price}}</h6>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
 
-    </div>
+   
 
 </body>
 

@@ -1,5 +1,5 @@
 body{
-    margin-top:20px;
+    margin-top:5px;
     background-color: #f4f7f6;
 }
 .c_review {
@@ -343,4 +343,7 @@ body{
 }
 .colorPrice{
     color: red;
+}
+.color-price{
+    color: black;
 }
