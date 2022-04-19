@@ -10,7 +10,9 @@ export class DataService {
   private selectedProducts = new BehaviorSubject<any>([]);
    castSelectedProducts = this.selectedProducts.asObservable();
    
+   
    addSelectedProduct(newSelectedProduct: any){
-     this.selectedProducts.next(newSelectedProduct); 
+     this.selectedProducts.next(newSelectedProduct);
+    
    }
 }

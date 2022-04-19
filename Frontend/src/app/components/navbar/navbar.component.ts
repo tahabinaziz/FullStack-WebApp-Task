@@ -11,21 +11,21 @@ import { ProductCartDialogComponent } from '../product-cart-dialog/product-cart-
 export class NavbarComponent implements OnInit {
   constructor(private dataService: DataService , public dialog: MatDialog) {}
 
-  selectedProducts = [];
+  selectedProducts:any = [];
   ngOnInit(): void {
+    
+    
     this.dataService.castSelectedProducts.subscribe((selectedProducts) => {
       this.selectedProducts = selectedProducts;
     });
+  
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ProductCartDialogComponent, {
+    this.dialog.open(ProductCartDialogComponent, {
       height: '600px',
       width: '1200px',
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    })
   }
 }
 

@@ -36,21 +36,35 @@ export class ProductCartDialogComponent implements OnInit {
     return sumValues;
   }
   addCounter(data: any) {
-    let objIndex = this.selectedProducts.findIndex(
+  const newState = this.selectedProducts.map((obj : any) => 
+      obj.id === data.id && !obj.numItems ? { ...obj, numItems : 1 , basePrice : obj.price } : obj
+    );
+    let objIndex = newState.findIndex(
       (obj: { id: number }) => obj.id === data.id
     );
-    this.selectedProducts[objIndex].quantity++;
-    this.selectedProducts[objIndex].price = this.selectedProducts[objIndex].price + this.selectedProducts[objIndex].quantity;
-    this.dataService.addSelectedProduct(this.selectedProducts);
+    newState[objIndex].numItems++;
+    newState[objIndex].price = newState[objIndex].basePrice * newState[objIndex].numItems;
+    this.selectedProducts = newState;
+    this.dataService.addSelectedProduct(newState);
   }
   removeCounter(data: any) {
-    let objIndex = this.selectedProducts.findIndex(
-      (obj: { id: number }) => obj.id === data.id
-    );
-    if(this.selectedProducts[objIndex].quantity > 0){
-    this.selectedProducts[objIndex].quantity--;
-    // this.selectedProducts[objIndex].price = this.selectedProducts[objIndex].price * this.selectedProducts[objIndex].quantity;
+    const newState = this.selectedProducts.map((obj : any) => 
+    obj.id === data.id && !obj.numItems ? { ...obj, numItems : 1 , basePrice : obj.price } : obj
+  );
+  let objIndex = newState.findIndex(
+    (obj: { id: number }) => obj.id === data.id
+  );
+  if(newState[objIndex].numItems === 1){
+    this.selectedProducts = this.selectedProducts.filter(function (item: any) {
+      return item.id !== data.id ;
+    });
     this.dataService.addSelectedProduct(this.selectedProducts);
+  }
+  else{
+  newState[objIndex].numItems--;
+  newState[objIndex].price = newState[objIndex].basePrice * newState[objIndex].numItems;
+  this.selectedProducts = newState;
+  this.dataService.addSelectedProduct(newState);
     }
   }
 }

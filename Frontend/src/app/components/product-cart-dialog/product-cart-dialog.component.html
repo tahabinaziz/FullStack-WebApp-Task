@@ -22,7 +22,7 @@
               </div>
               <div class="counter">
                   <div (click) = "addCounter(data)" class="btn">+</div>
-                  <div class="count">{{data?.quantity}}</div>
+                  <div class="count">{{data?.numItems ? data?.numItems : 1 }}</div>
                   <div (click) = "removeCounter(data)" class="btn">-</div>
               </div>
               <div class="prices">
